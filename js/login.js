@@ -13,7 +13,7 @@ async function autenticar(e) {
     senha: document.getElementById('id_do_input_do_senha').value
   };
 
-  const url = "https://atividade-18.vercel.app/login"; // URL do seu back-end
+  const url = "https://atividade-18-six.vercel.app/login"; // URL do seu back-end
 
   try {
     const response = await fetch(url, {

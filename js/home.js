@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
   
-    const response = await fetch("https://atividade-18.vercel.app/auth", {
+    const response = await fetch("https://atividade-18-six.vercel.app/auth", {
       method: 'GET',
       headers: {
         'x-access-token': token,

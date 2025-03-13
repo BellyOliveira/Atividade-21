@@ -4,7 +4,7 @@ const respAutor = document.getElementById('respAutor');
 
 botaoAutor.addEventListener('click', pegarInformacao);
 
-const urlBase = "https://atividade-18.vercel.app/";
+const urlBase = "https://atividade-18-six.vercel.app/";
 
 async function pegarInformacao() {
   respAutor.innerText = "Aguarde... ";

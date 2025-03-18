@@ -1,29 +1,23 @@
+import { verificarAutenticacao } from './autorizar.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const token = localStorage.getItem('jwt');
-  
-    if (!token) {
-      // Redireciona para a página de login se o token não estiver presente
-      window.location.href = 'login.html';
-      return;
-    }
-  
-    const response = await fetch("https://atividade-18-six.vercel.app/auth", {
-      method: 'GET',
-      headers: {
-        'x-access-token': token,
-      },
-    });
-  
-    const data = await response.json();
-  
-    if (response.ok) {
-      // Se a autenticação for bem-sucedida, mostra o conteúdo protegido
-      document.getElementById('loading-overlay').style.display = 'none';
-      document.getElementById('conteudo-protegido').style.display = 'block';
-    } else {
-      // Caso contrário, redireciona para o login
-      window.location.href = 'login.html';
-    }
-  });
-  
+// Função anônima auto-executável assíncrona.
+// O ()() garante que ela seja executada imediatamente ao carregar o script
+(async () => {
+  // Chama a função 'verificarAutenticacao' de forma assíncrona e espera seu resultado.
+  const autenticado = await verificarAutenticacao();
+
+  // Obtém o elemento HTML com o ID 'loading-overlay' (o overlay de carregamento da página)
+  const overlay = document.getElementById('loading-overlay');
+
+  // Obtém o elemento HTML com o ID 'conteudo-protegido' (o conteúdo restrito que deve ser exibido após autenticação)
+  const conteudo = document.getElementById('conteudo-protegido');
+
+  // Verifica se o usuário foi autenticado com sucesso
+  if (autenticado) {
+    // Remove o elemento 'overlay' do DOM, ocultando o texto "Carregando..." da tela
+    overlay.remove();
+
+    // Altera o estilo do elemento 'conteudo' para 'block', tornando o conteúdo visível
+    conteudo.style.display = 'block';
+  } 
+})();

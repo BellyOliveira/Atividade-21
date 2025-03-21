@@ -12,8 +12,8 @@ async function autenticar(e) {
     email: document.getElementById('id_do_input_do_email').value,
     senha: document.getElementById('id_do_input_do_senha').value
   };
-
-  const url = "https://atividade-18-six.vercel.app/login"; // URL do seu back-end
+https://atividade-18-six.vercel.app/
+  const url = "login"; // URL do seu back-end
 
   try {
     const response = await fetch(url, {

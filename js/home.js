@@ -54,21 +54,21 @@ try {
             `;
     tabelaCorpo.appendChild(linha);
   });
-} catch (error) {
-  console.error("Erro:", error);
-}
-
-tabelaCorpo.addEventListener('click', acao);
-
-function acao(e) {
-  if (e.target.classList.contains("botaoExcluir")) {
-    e.preventDefault();
-    const id = e.target.getAttribute("href");
-    excluirUsuario(id);
+  } catch (error) {
+    console.error("Erro:", error);
   }
-}
 
-async function excluirUsuario(id) {
+  tabelaCorpo.addEventListener('click', acao);
+
+  function acao(e) {
+    if (e.target.classList.contains("botaoExcluir")) {
+      e.preventDefault();
+      const id = e.target.getAttribute("href");
+      excluirUsuario(id);
+    }
+  }
+
+  async function excluirUsuario(id) {
   try {
     const endpoint = `/usuario/${id}`;
     const urlFinal = urlBase + endpoint;

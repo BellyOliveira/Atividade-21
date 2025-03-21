@@ -1,4 +1,4 @@
-const botaoLogin = document.querySelector('#id_do_botao_Entrar_do_formulario');
+const botaoLogin = document.querySelector('#Entrar');
 botaoLogin.addEventListener('click', autenticar);
 
 const areaMensagem = document.getElementById('msg');
@@ -9,11 +9,11 @@ async function autenticar(e) {
   document.getElementById('msg').innerText = "Aguarde... ";
 
   const dados = {
-    email: document.getElementById('id_do_input_do_email').value,
-    senha: document.getElementById('id_do_input_do_senha').value
+    email: document.getElementById('email').value,
+    senha: document.getElementById('senha').value
   };
-https://atividade-18-six.vercel.app/
-  const url = "login"; // URL do seu back-end
+
+  const url = "https://atividade-18-six.vercel.app/login"; // URL do seu back-end
 
   try {
     const response = await fetch(url, {
